@@ -1,148 +1,338 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
+  <!-- Open Graph 메타 태그 -->
+  <meta property="og:title" content="아이큐의 Today I Learn" />
+  <meta property="og:description" content="우아한테크코스 8기 백엔드 크루 아이큐의 개발 성장 기록. Java, OOP, TDD를 탐구합니다." />
+  <meta property="og:image" content="./images/og-image.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
 
-    <title>Today I Learn</title>
-    <link rel="stylesheet" href="./css/main.css" />
-    <script src="./js/index.js" defer></script>
-  </head>
-  <body>
-    <!-- 상단 내비게이션 -->
-    <nav class="top-nav">
-      <span class="nav-logo">My Page</span>
-      <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
-        <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#works">인생 작품</a></li>
-        <li><a href="#til">TIL</a></li>
-      </ul>
-    </nav>
+  <title>아이큐 | Today I Learn</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <script src="./js/index.js" defer></script>
+</head>
+<body>
 
-    <!-- 프로필 히어로 -->
-    <section class="hero" id="about">
-      <div class="profile-card">
-        <div class="profile-image">
-          <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
+<!-- 상단 내비게이션 -->
+<nav class="top-nav" id="top-nav">
+  <span class="nav-logo">아이큐<span class="dot">·</span></span>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">자기소개</a></li>
+      <li><a href="#gallery">갤러리</a></li>
+      <li><a href="#works">인생 작품</a></li>
+      <li><a href="#til">TIL</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="다크 모드 전환">🌙</button>
+  </div>
+</nav>
+
+<!-- 프로필 히어로 -->
+<section class="hero" id="about">
+  <div class="profile-card">
+    <div class="profile-image">
+      <!-- 프로필 이미지 -->
+      <img src="./images/profile.svg" alt="아이큐 프로필 사진" />
+    </div>
+    <div class="profile-info">
+      <h1>아이큐</h1>
+      <span class="handle">@IQ / 한동희</span>
+      <p class="tagline">
+        근본을 이해할 때 가장 멀리 갈 수 있다고 믿는 백엔드 개발자.<br />
+        군 복무 중 독학한 양자역학이 나를 코드로 이끌었다.
+      </p>
+      <div class="profile-badges">
+        <span class="badge">🐥 우아한테크코스 8기</span>
+        <span class="badge">☕ Java</span>
+        <span class="badge">⚛️ 양자역학</span>
+        <span class="badge">🔢 알고리즘</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- 자기소개 -->
+  <section class="content-section reveal" id="intro">
+    <div class="section-header">
+      <span class="section-num">01.</span>
+      <h2>자기소개</h2>
+    </div>
+    <p class="intro-text">
+      안녕하세요, 중앙대학교 소프트웨어학부에 재학 중인 <strong>한동희(아이큐)</strong>입니다.
+      현재 <a href="https://woowacourse.github.io/" target="_blank" rel="noopener noreferrer">우아한테크코스</a> 8기
+      백엔드 과정에서 Java와 OOP, TDD를 깊이 탐구하고 있습니다.
+    </p>
+    <p class="intro-text">
+      군 복무 중 독학으로 접한 양자역학은 단순한 물리학 공부를 넘어 "근본을 이해해야 한다"는 철학을 남겨주었습니다.
+      수학 경시대회(SCPC, ACPC) 경험을 통해 문제를 구조적으로 분해하는 사고방식을 길렀고,
+      이 두 가지가 지금 코드를 대하는 방식의 근간이 되었습니다.
+      암기보다는 원리를, 빠름보다는 깊이를 추구합니다.
+    </p>
+    <p class="intro-text">
+      기술 학습을 위해 <a href="https://github.com/dev-book-lab" target="_blank" rel="noopener noreferrer">dev-book-lab</a>
+      이라는 GitHub 오거나이제이션을 운영하며, Spring Core · Spring Data · Spring Boot · Spring MVC 시리즈와
+      JVM, Effective Java 등 200개 이상의 딥다이브 문서를 꾸준히 작성하고 있습니다.
+    </p>
+
+    <div class="link-group">
+      <a href="https://github.com/e9ua1" target="_blank" rel="noopener noreferrer" class="link-chip">
+        <span class="icon">🐙</span> GitHub
+      </a>
+      <a href="https://github.com/dev-book-lab" target="_blank" rel="noopener noreferrer" class="link-chip">
+        <span class="icon">📚</span> dev-book-lab
+      </a>
+      <a href="https://woowacourse.github.io/" target="_blank" rel="noopener noreferrer" class="link-chip">
+        <span class="icon">🐥</span> 우아한테크코스
+      </a>
+    </div>
+  </section>
+
+  <!-- 기본 정보 -->
+  <section class="content-section reveal" id="info">
+    <div class="section-header">
+      <span class="section-num">02.</span>
+      <h2>기본 정보</h2>
+    </div>
+    <table class="info-table">
+      <tbody>
+      <tr>
+        <th scope="row">이름</th>
+        <td>한동희</td>
+      </tr>
+      <tr>
+        <th scope="row">소속</th>
+        <td>중앙대학교 소프트웨어학부 / 우아한테크코스 8기</td>
+      </tr>
+      <tr>
+        <th scope="row">MBTI</th>
+        <td>INTJ</td>
+      </tr>
+      <tr>
+        <th scope="row">관심사</th>
+        <td>Java OOP · TDD · 양자역학 · 알고리즘</td>
+      </tr>
+      <tr>
+        <th scope="row">취미</th>
+        <td>알고리즘 문제 풀기, 물리학 서적 읽기, 딥다이브 문서 쓰기</td>
+      </tr>
+      <tr>
+        <th scope="row">좋아하는 음식</th>
+        <td>초밥 🍣</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 나만의 갤러리 -->
+  <section class="content-section reveal" id="gallery">
+    <div class="section-header">
+      <span class="section-num">03.</span>
+      <h2>나만의 갤러리</h2>
+    </div>
+    <p class="section-desc">나를 설레게 하는 수학·물리학 개념들 — 아름다운 방정식과 구조들</p>
+    <div class="gallery-grid">
+      <img src="./images/gallery-1.svg" alt="파동함수와 확률 분포 — 슈뢰딩거 방정식의 해" />
+      <img src="./images/gallery-2.svg" alt="이중 슬릿 실험 — 빛의 간섭 패턴" />
+      <img src="./images/gallery-3.svg" alt="피보나치 나선 — 자연 속 황금비" />
+      <img src="./images/gallery-4.svg" alt="이진 탐색 트리 — 알고리즘의 구조적 아름다움" />
+      <img src="./images/gallery-5.svg" alt="오일러 공식 e^(iπ)+1=0 — 수학에서 가장 아름다운 방정식" />
+      <img src="./images/gallery-6.svg" alt="양자 회로 다이어그램 — 큐비트의 얽힘" />
+      <img src="./images/gallery-7.svg" alt="하모닉 오실레이터 위상 공간 초상화" />
+      <img src="./images/gallery-8.svg" alt="퀵소트 분할 정복 시각화" />
+      <img src="./images/gallery-9.svg" alt="시에르핀스키 삼각형 — 프랙탈 구조" />
+    </div>
+  </section>
+
+  <!-- 나를 울린 인생 작품 -->
+  <section class="content-section reveal" id="works">
+    <div class="section-header">
+      <span class="section-num">04.</span>
+      <h2>나를 울린 인생 작품</h2>
+    </div>
+    <p class="section-desc">세계를 바라보는 눈을 바꿔준 작품들.</p>
+
+    <div class="works-list">
+
+      <!-- 인생 책: 파인만 물리학 강의 -->
+      <article class="work-card">
+        <div class="work-thumbnail">
+          <img src="./images/work-feynman.svg" alt="파인만 물리학 강의 책 표지" />
         </div>
-        <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
+        <div class="work-info">
+          <span class="work-tag">📖 인생 책</span>
+          <h3>파인만 물리학 강의</h3>
+          <p class="work-author">Richard P. Feynman · 1963</p>
+          <p>
+            군 복무 중 아무 기대 없이 펼쳤다가 인생이 바뀐 책.
+            파인만은 어려운 개념을 "왜 그런지" 본질부터 설명한다.
+            수식보다 직관, 암기보다 이해를 강조하는 그의 방식이
+            나의 학습 철학이 되었고, 결국 소프트웨어를 공부하는 방향으로
+            이어졌다. 복잡해 보이는 것도 근본을 파고들면 단순하다는 것,
+            그리고 그 탐구 자체가 즐겁다는 것을 알게 해준 작품.
+          </p>
+        </div>
+      </article>
+
+      <!-- 인생 영화: 인터스텔라 (YouTube iframe) -->
+      <article class="work-card has-video">
+        <div class="work-media">
+          <iframe
+              src="https://www.youtube.com/embed/zSWdZVtXT7E"
+              title="인터스텔라 공식 예고편"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+          ></iframe>
+        </div>
+        <div class="work-bottom">
+          <div class="work-thumbnail">
+            <img src="./images/work-interstellar.svg" alt="인터스텔라 영화 포스터 그래픽" />
+          </div>
+          <div class="work-info">
+            <span class="work-tag">🎬 인생 영화</span>
+            <h3>인터스텔라</h3>
+            <p class="work-author">Christopher Nolan · 2014</p>
+            <p>
+              블랙홀, 웜홀, 시간 팽창… 영화를 보며 물리학 개념들이
+              실제 우주에서 어떻게 작동할지 상상하던 밤을 잊을 수 없다.
+              킵 손(Kip Thorne)의 일반상대성이론이 영화 속 시각화로
+              구현되는 장면은 지금도 경이롭다. 우주의 규모 앞에서
+              겸손해지고, 동시에 그 규모를 이해하려는 인간의 노력에
+              뭉클해지는 작품.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 인생 곡: 빌리 아일리시 -->
+      <article class="work-card">
+        <div class="work-thumbnail">
+          <img src="./images/work-music.svg" alt="인생 노래 앨범 커버 그래픽" />
+        </div>
+        <div class="work-info">
+          <span class="work-tag">🎵 인생 노래</span>
+          <h3>the 1</h3>
+          <p class="work-author">Taylor Swift · folklore, 2020</p>
+          <p>
+            알고리즘 문제를 며칠째 못 풀다가 새벽 3시에 우연히 들은 노래.
+            "if one thing had been different, would everything be different today?" —
+            코드 설계의 작은 선택 하나가 나중에 전혀 다른 구조를 만들어낸다는
+            사실이 오버랩됐다. 지금도 어려운 리팩토링을 시작할 때 재생한다.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TIL (Today I Learned) -->
+  <section class="content-section reveal" id="til">
+    <div class="section-header">
+      <span class="section-num">05.</span>
+      <h2>TIL</h2>
+    </div>
+    <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다. 작은 발견도 놓치지 않도록.</p>
+
+    <!-- TIL 작성 폼 -->
+    <form class="til-form" id="til-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="til-date">날짜</label>
+          <input type="date" id="til-date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="til-title">제목</label>
+          <input
+              type="text"
+              id="til-title"
+              name="title"
+              placeholder="학습 주제를 입력하세요"
+              maxlength="100"
+              required
+          />
         </div>
       </div>
-    </section>
+      <div class="form-group">
+        <label for="til-content">내용</label>
+        <textarea
+            id="til-content"
+            name="content"
+            placeholder="오늘 배운 내용을 정리해주세요"
+            required
+        ></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="reset">초기화</button>
+        <button type="submit">✏️ 등록</button>
+      </div>
+    </form>
 
-    <main>
-      <!-- 자기소개 -->
-      <section class="content-section">
-        <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
-      </section>
-
-      <!-- 기본 정보 -->
-      <section class="content-section" id="info">
-        <h2>기본 정보</h2>
-        <!-- TODO: 자신의 기본 정보를 표(<table>)로 정리하세요 -->
-        <table class="info-table">
-          <tr>
-            <th>이름</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>MBTI</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>취미</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>좋아하는 음식</th>
-            <td></td>
-          </tr>
-        </table>
-      </section>
-
-      <!-- 나만의 갤러리 -->
-      <section class="content-section" id="gallery">
-        <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
-        <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
+    <!-- TIL 목록 -->
+    <div class="til-list" id="til-list">
+      <!-- 초기 예시 항목: localStorage 데이터로 대체됨 -->
+      <article class="til-item">
+        <div class="til-item-header">
+          <time datetime="2026-03-18">2026-03-18</time>
+          <button class="til-delete-btn" aria-label="삭제">✕</button>
         </div>
-      </section>
-
-      <!-- 나를 울린 인생 작품 -->
-      <section class="content-section" id="works">
-        <h2>나를 울린 인생 작품</h2>
-        <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
-          <article class="work-card">
-            <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
-            </div>
-            <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
-            </div>
-          </article>
+        <h3>일급 컬렉션(First-Class Collection)</h3>
+        <p>
+          컬렉션 하나를 래핑한 클래스를 만들어 불변성을 보장하고 도메인 로직을 응집시키는 패턴.
+          우테코 블랙잭 미션에서 Cards 클래스로 처음 제대로 적용해봤다.
+          단순히 List를 감싸는 게 아니라, "무엇을 할 수 있는가"에 대한 책임을 직접 갖는다는 것이 핵심.
+        </p>
+      </article>
+      <article class="til-item">
+        <div class="til-item-header">
+          <time datetime="2026-03-17">2026-03-17</time>
+          <button class="til-delete-btn" aria-label="삭제">✕</button>
         </div>
-      </section>
-
-      <!-- TIL (Today I Learned) -->
-      <section class="content-section" id="til">
-        <h2>TIL</h2>
-        <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
-
-        <!-- TIL 작성 폼 -->
-        <form class="til-form" id="til-form">
-          <div class="form-group">
-            <label for="til-date">날짜</label>
-            <input type="date" id="til-date" name="date" required />
-          </div>
-          <div class="form-group">
-            <label for="til-title">제목</label>
-            <input type="text" id="til-title" name="title" placeholder="학습 주제를 입력하세요" required />
-          </div>
-          <div class="form-group">
-            <label for="til-content">내용</label>
-            <textarea id="til-content" name="content" placeholder="오늘 배운 내용을 정리해주세요" required></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit">등록</button>
-            <button type="reset">초기화</button>
-          </div>
-        </form>
-
-        <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
-        <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
-          <article class="til-item">
-            <time>2026-03-15</time>
-            <h3>HTML 시멘틱 태그</h3>
-            <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
-          </article>
+        <h3>Tell, Don't Ask 원칙</h3>
+        <p>
+          객체의 상태를 꺼내서 판단하지 말고, 객체에게 무언가를 하라고 명령하라.
+          getter 남발 → 묻지 말고 시켜라. 로직이 객체 밖으로 흘러나오는 코드를
+          발견하면 이 원칙을 위반하고 있는 것. 코드 리뷰에서 반복적으로 받은 피드백 덕에 이제는 자연스럽게 체화됐다.
+        </p>
+      </article>
+      <article class="til-item">
+        <div class="til-item-header">
+          <time datetime="2026-03-15">2026-03-15</time>
+          <button class="til-delete-btn" aria-label="삭제">✕</button>
         </div>
-      </section>
+        <h3>TDD — Red · Green · Refactor 사이클</h3>
+        <p>
+          실패하는 테스트를 먼저 작성(Red), 테스트를 통과하는 최소한의 코드 작성(Green),
+          중복 제거 및 구조 개선(Refactor). 이 짧은 사이클을 수십 번 반복하면
+          자연스럽게 검증된 설계가 나온다. 테스트가 설계를 이끄는 경험.
+        </p>
+      </article>
+    </div>
+  </section>
 
-    </main>
+</main>
 
-    <footer>
-      <p>&copy; My Page</p>
-    </footer>
-  </body>
+<footer>
+  <p>
+    <strong>아이큐</strong> · 한동희 · 우아한테크코스 8기 백엔드<br />
+    <a href="https://github.com/e9ua1" target="_blank" rel="noopener noreferrer">GitHub</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/dev-book-lab" target="_blank" rel="noopener noreferrer">dev-book-lab</a>
+  </p>
+  <p style="margin-top: 8px;">&copy; 2026 아이큐. All rights reserved.</p>
+</footer>
+
+<!-- 갤러리 라이트박스 -->
+<div id="lightbox" role="dialog" aria-label="이미지 확대 보기">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<!-- 맨 위로 버튼 -->
+<button id="scroll-top" aria-label="페이지 상단으로 이동">↑</button>
+
+</body>
 </html>
