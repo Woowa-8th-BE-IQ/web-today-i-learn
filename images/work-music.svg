@@ -1,29 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
   <defs>
-    <linearGradient id="desert" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a0a2e"/>
-      <stop offset="40%" style="stop-color:#2d1a4a"/>
-      <stop offset="70%" style="stop-color:#8b4513"/>
-      <stop offset="100%" style="stop-color:#c8780a"/>
-    </linearGradient>
-    <radialGradient id="sun" cx="50%" cy="40%" r="20%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.9"/>
-      <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:0"/>
+    <radialGradient id="glow" cx="50%" cy="52%" r="30%">
+      <stop offset="0%"   stop-color="#d4e800" stop-opacity="0.95"/>
+      <stop offset="30%"  stop-color="#a0b800" stop-opacity="0.5"/>
+      <stop offset="70%"  stop-color="#4a5500" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <filter id="haze"><feGaussianBlur stdDeviation="2"/></filter>
+    <radialGradient id="outerGlow" cx="50%" cy="52%" r="50%">
+      <stop offset="0%"   stop-color="#c8d400" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="14"/></filter>
   </defs>
-  <rect width="280" height="280" fill="url(#desert)"/>
-  <circle cx="40"  cy="30"  r="1.2" fill="white" opacity="0.7"/>
-  <circle cx="90"  cy="20"  r="0.8" fill="white" opacity="0.5"/>
-  <circle cx="150" cy="15"  r="1"   fill="white" opacity="0.6"/>
-  <circle cx="210" cy="25"  r="0.8" fill="white" opacity="0.5"/>
-  <circle cx="255" cy="18"  r="1.2" fill="white" opacity="0.7"/>
-  <circle cx="140" cy="105" r="50"  fill="url(#sun)"/>
-  <line x1="0"   y1="175" x2="280" y2="175" stroke="#c8780a" stroke-width="1" opacity="0.3"/>
-  <line x1="20"  y1="180" x2="260" y2="180" stroke="#daa520" stroke-width="0.8" opacity="0.2"/>
-  <path d="M0 200 Q70 165 140 190 Q210 215 280 185 L280 280 L0 280 Z" fill="#7a4010" opacity="0.8"/>
-  <path d="M0 220 Q50 205 110 215 Q170 225 220 210 Q250 205 280 212 L280 280 L0 280 Z" fill="#5a2e08" opacity="0.9"/>
-  <ellipse cx="140" cy="190" rx="18" ry="6" fill="#c8780a" opacity="0.4" filter="url(#haze)"/>
-  <text x="140" y="248" font-family="serif" font-size="30" fill="#ffd700" text-anchor="middle" font-weight="bold" opacity="0.9">신기루</text>
-  <text x="140" y="268" font-family="sans-serif" font-size="13" fill="#daa520" text-anchor="middle" letter-spacing="3" opacity="0.8">씨잼</text>
+
+  <!-- 완전한 암흑 배경 -->
+  <rect width="280" height="280" fill="#050505"/>
+
+  <!-- 가장 바깥 글로우 (넓게 번지는 빛) -->
+  <ellipse cx="140" cy="148" rx="110" ry="90" fill="#8a9600" opacity="0.06" filter="url(#blur3)"/>
+
+  <!-- 중간 글로우 레이어 -->
+  <ellipse cx="140" cy="148" rx="70" ry="55" fill="#bccf00" opacity="0.18" filter="url(#blur1)"/>
+
+  <!-- 핵심 광원 -->
+  <ellipse cx="140" cy="148" rx="38" ry="28" fill="url(#glow)" filter="url(#blur2)"/>
+
+  <!-- 광원 중심 (가장 밝은 점) -->
+  <ellipse cx="140" cy="148" rx="14" ry="10" fill="#e8ff00" opacity="0.9"/>
+  <ellipse cx="140" cy="147" rx="6"  ry="4"  fill="#f8ff88" opacity="0.95"/>
+
+  <!-- 바닥 반사 (그림자처럼 깔리는 반사광) -->
+  <ellipse cx="140" cy="190" rx="55" ry="8" fill="#8a9600" opacity="0.12" filter="url(#blur1)"/>
+
+  <!-- 타이틀 -->
+  <text x="140" y="244"
+    font-family="'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif"
+    font-size="34"
+    font-weight="700"
+    fill="#d4e800"
+    text-anchor="middle"
+    opacity="0.92">신기루</text>
+
+  <!-- 아티스트 -->
+  <text x="140" y="266"
+    font-family="'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif"
+    font-size="13"
+    fill="#7a8800"
+    text-anchor="middle"
+    letter-spacing="4">C JAMM</text>
 </svg>

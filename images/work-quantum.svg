@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 360">
+  <defs>
+    <linearGradient id="cover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+    <radialGradient id="center" cx="50%" cy="50%" r="15%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8e8e8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="petal1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#3a3a3a"/>
+    </linearGradient>
+    <linearGradient id="petal2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <filter id="innerShadow">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- 흰/회색 표지 배경 -->
+  <rect width="280" height="360" fill="url(#cover)"/>
+
+  <!-- 책등 그림자 -->
+  <rect x="0" y="0" width="14" height="360" fill="#c0c0c0"/>
+
+  <!-- 핀휠/별모양 패턴 (8개의 꽃잎) - 책 표지 중앙 -->
+  <!-- 꽃잎들은 alternating black/dark grey, 중앙 기준 방사형 -->
+  <g transform="translate(140, 185)">
+    <!-- 꽃잎 1 (위 오른쪽 대각선) -->
+    <path d="M0,0 L18,-72 L0,-48 Z" fill="#1a1a1a" opacity="0.9"/>
+    <path d="M0,0 L18,-72 L36,-48 Z" fill="#2d2d2d" opacity="0.85"/>
+    <!-- 꽃잎 2 (오른쪽) -->
+    <path d="M0,0 L72,-18 L48,0 Z" fill="#111111" opacity="0.9"/>
+    <path d="M0,0 L72,-18 L48,18 Z" fill="#222222" opacity="0.85"/>
+    <!-- 꽃잎 3 (아래 오른쪽) -->
+    <path d="M0,0 L18,72 L0,48 Z" fill="#1a1a1a" opacity="0.9"/>
+    <path d="M0,0 L18,72 L36,48 Z" fill="#2d2d2d" opacity="0.85"/>
+    <!-- 꽃잎 4 (아래 왼쪽) -->
+    <path d="M0,0 L-18,72 L0,48 Z" fill="#111111" opacity="0.9"/>
+    <path d="M0,0 L-18,72 L-36,48 Z" fill="#222222" opacity="0.85"/>
+    <!-- 꽃잎 5 (왼쪽) -->
+    <path d="M0,0 L-72,18 L-48,0 Z" fill="#1a1a1a" opacity="0.9"/>
+    <path d="M0,0 L-72,18 L-48,-18 Z" fill="#2d2d2d" opacity="0.85"/>
+    <!-- 꽃잎 6 (위 왼쪽) -->
+    <path d="M0,0 L-18,-72 L0,-48 Z" fill="#111111" opacity="0.9"/>
+    <path d="M0,0 L-18,-72 L-36,-48 Z" fill="#222222" opacity="0.85"/>
+    <!-- 위쪽 추가 -->
+    <path d="M0,0 L0,-75 L18,-48 Z"  fill="#1a1a1a" opacity="0.88"/>
+    <path d="M0,0 L0,-75 L-18,-48 Z" fill="#2a2a2a" opacity="0.88"/>
+    <!-- 오른쪽 추가 -->
+    <path d="M0,0 L75,0 L48,18 Z"   fill="#111111" opacity="0.88"/>
+    <path d="M0,0 L75,0 L48,-18 Z"  fill="#222222" opacity="0.88"/>
+    <!-- 아래쪽 추가 -->
+    <path d="M0,0 L0,75 L18,48 Z"   fill="#1a1a1a" opacity="0.88"/>
+    <path d="M0,0 L0,75 L-18,48 Z"  fill="#2a2a2a" opacity="0.88"/>
+    <!-- 왼쪽 추가 -->
+    <path d="M0,0 L-75,0 L-48,18 Z" fill="#111111" opacity="0.88"/>
+    <path d="M0,0 L-75,0 L-48,-18 Z" fill="#222222" opacity="0.88"/>
+    <!-- 중앙 흰 원 -->
+    <circle cx="0" cy="0" r="16" fill="url(#center)"/>
+    <circle cx="0" cy="0" r="9"  fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- 상단 텍스트 -->
+  <text x="140" y="42"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="11" fill="#555" text-anchor="middle" letter-spacing="2">THE QUANTUM STORY</text>
+
+  <!-- 메인 제목 -->
+  <text x="140" y="78"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="28" font-weight="900"
+    fill="#111" text-anchor="middle" letter-spacing="1">퀀텀스토리</text>
+
+  <!-- 부제 -->
+  <text x="140" y="100"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="10" fill="#666" text-anchor="middle">양자역학 100년 역사의 결정적 순간들</text>
+
+  <!-- 저자 -->
+  <text x="140" y="328"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="11" fill="#444" text-anchor="middle">짐 배것 (Jim Baggott)</text>
+  <text x="140" y="346"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="10" fill="#888" text-anchor="middle">승산 · 2012</text>
+</svg>
