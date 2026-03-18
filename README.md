@@ -5,7 +5,7 @@
 
 ## 🔗 배포 링크
 
-> GitHub Pages 배포 후 링크를 여기에 추가하세요.
+> https://Woowa-8th-BE-IQ.github.io/web-today-i-learn/
 
 ## 📁 프로젝트 구조
 
